@@ -1,9 +1,9 @@
 
 <h1 align="center" id="Template">
-  Title
+  Logger
 </h1>
 
-<h3 align="center">The template README (and other files) for my GitHub repositories.</h3>
+<h3 align="center">Minimalist, dependency-free, lightning fast NodeJS logger</h3>
 
 <p align="center">
       <a href="https://patreon.com/discordboats" target="_blank">
@@ -18,7 +18,7 @@
 
 ## Information
 
-This repository stores my template README file along with other useful default & template files for my GitHub repositories.
+A minimalist, dependency-free, lightning fast logger made for https://discord.boats and my other NodeJS projects
 
 ## Contributing
 
