@@ -1,5 +1,5 @@
 const fs = require('fs');
-const log_file = fs.createWriteStream(__dirname + '/logs/debug.log', {flags : 'a'});
+const log_file = fs.createWriteStream(__dirname + '/debug.log', {flags : 'a'});
 
 const colours = {Reset: "\x1b[0m",FgWhite: "\x1b[37m",BgError: "\x1b[41m",BgSuccess: "\x1b[42m",BgWarning: "\x1b[43m",BgInfo: "\x1b[46m"}
 const escape = (type) => `0${type}`.slice(-2);
