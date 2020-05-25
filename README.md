@@ -20,7 +20,7 @@
 
 A minimalist, dependency-free, lightning fast logger made for https://discord.boats and my other NodeJS projects
 
-![#](https://cdn.discordapp.com/attachments/395611573445591051/714058879545376787/unknown.png)
+![#](https://cdn.discordapp.com/attachments/617783101128441878/714364487926546473/unknown.png)
 
 ## Contributing
 
