@@ -51,10 +51,10 @@ class Logger {
                 break;
         }
 
-        const final_file = `[${type}] ${full_date} : ${message}\n`
+        const final_file = `${full_date} [${type}] : ${message}\n`
         save ? log_file.write(final_file) : null
 
-        const final_console = `${type_text} ${full_date} : ${message}`
+        const final_console = `${full_date} ${type_text} : ${message}`
         return console.log(final_console)
     }
 }
