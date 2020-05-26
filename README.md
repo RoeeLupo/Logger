@@ -39,7 +39,7 @@ Logger.info("info")
 ### Option
 | Name | Default Value                  | Required | Description                                |
 |------|--------------------------------|----------|--------------------------------------------|
-| file | __dirname + '/logs/debug.log'  | Yes      | Defines where the log file will be created |
+| file | __dirname + '/logs/debug.log'  | No      | Defines where the log file will be created |
 
 ## Contributing
 
