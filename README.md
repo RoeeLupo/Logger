@@ -23,6 +23,10 @@ A minimalist, dependency-free, lightning fast logger made for https://discord.bo
 
 ![#](https://mrsheldon.me/files/70605228.png)
 
+## Installing
+
+Use `npm i @mrsheldon/logger`
+
 ## Usage
 
 ```js
