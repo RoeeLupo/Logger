@@ -1,15 +1,21 @@
 const fs = require('fs');
-const log_file = fs.createWriteStream(__dirname + '/debug.log', {flags : 'a'});
 
 const colours = {Reset: "\x1b[0m",FgWhite: "\x1b[37m",BgError: "\x1b[41m",BgSuccess: "\x1b[42m",BgWarning: "\x1b[43m",BgInfo: "\x1b[46m"}
 const escape = (type) => `0${type}`.slice(-2);
 
 module.exports = class Logger {
+    constructor(options) {
+        this.options = options || {}
+        if (this.options.hasOwnProperty('file')) this.file = this.options.file;
+        else this.file = __dirname + '/debug.log';
+        this.log_file = fs.createWriteStream(this.file, {flags : 'a'});
+      }
+      
     info(...message) {
         return this._write('info', ...message);
     }
     
-    warn(...message) {
+    warning(...message) {
         return this._write('warning', ...message);
     }
 
@@ -52,7 +58,7 @@ module.exports = class Logger {
         }
 
         const final_file = `${full_date} [${type}] : ${message}\n`
-        save ? log_file.write(final_file) : null
+        save ? this.log_file.write(final_file) : null
 
         const final_console = `${full_date} ${type_text} : ${message}`
         return console.log(final_console)

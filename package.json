@@ -1,11 +1,10 @@
 {
-  "name": "logger",
-  "description": "Minimalist, dependency-free, lightning fast NodeJS logger",
+  "name": "@mrsheldon/logger",
+  "description": "Minimalist, dependency-free, lightning fast NodeJS logging tool",
   "homepage": "https://github.com/MrSheldon/Logger",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "main": "index.js",
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "readme": "README.md",
   "engines": {
     "node": ">=10"
@@ -16,7 +15,9 @@
     "url": "https://mrsheldon.me"
   },
   "keywords": [
-    "logger"
+    "logger",
+    "logging",
+    "logs"
   ],
   "scripts": {
     "start": "node index.js"
