@@ -6,9 +6,16 @@ const escape = (type) => `0${type}`.slice(-2);
 module.exports = class Logger {
     constructor(options) {
         this.options = options || {}
-        if (this.options.hasOwnProperty('file')) this.file = this.options.file;
+
+        if (this.options.hasOwnProperty('file_save')) this.file_save = this.options.file_save;
+        else this.file_save = false;
+
+        if (this.options.hasOwnProperty('file_dir')) this.file = this.options.file_dir;
         else this.file = __dirname + '/debug.log';
-        this.log_file = fs.createWriteStream(this.file, {flags : 'a'});
+
+        if (this.file_save) {
+            this.log_file = fs.createWriteStream(this.file, {flags : 'a'});
+        }
       }
       
     info(...message) {
@@ -56,9 +63,11 @@ module.exports = class Logger {
             default:
                 break;
         }
-
-        const final_file = `${full_date} [${type}] : ${message}\n`
-        save ? this.log_file.write(final_file) : null
+        
+        if(this.file_save) {
+            const final_file = `${full_date} [${type}] : ${message}\n`
+            save ? this.log_file.write(final_file) : null
+        }
 
         const final_console = `${full_date} ${type_text} : ${message}`
         return console.log(final_console)
