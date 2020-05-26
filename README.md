@@ -41,10 +41,11 @@ Logger.info("info")
 ```
 
 ### Option
-| Name | Default Value                  | Required | Description                                |
-|------|--------------------------------|----------|--------------------------------------------|
-| file_save | false  | No      | Decides if it will save the errors and warnings to the file |
-| file_dir | __dirname + '/logs/debug.log'  | No      | Defines where the log file will be created |
+| Name      | Default Value                 | Required | Description                                                 |
+|-----------|-------------------------------|----------|-------------------------------------------------------------|
+| file_save | false                         | No       | Decides if it will save the errors and warnings to the file |
+| file_dir  | __dirname + '/logs/debug.log' | No       | Decides where the log file will be created                  |
+
 
 ## Contributing
 
