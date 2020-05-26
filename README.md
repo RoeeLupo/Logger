@@ -1,8 +1,8 @@
-<h1 align="center" id="Template">
+<h2 align="center" id="Template">
   Logger
-</h1>
+</h2>
 
-<h3 align="center">Minimalist, dependency-free, lightning fast NodeJS logger</h3>
+<h3 align="center">Minimalist, dependency-free, lightning fast NodeJS logging tool</h3>
 
 <p align="center">
       <a href="https://patreon.com/discordboats" target="_blank">
