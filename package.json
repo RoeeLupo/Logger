@@ -2,7 +2,7 @@
   "name": "@mrsheldon/logger",
   "description": "Minimalist, dependency-free, lightning fast NodeJS logging tool",
   "homepage": "https://github.com/MrSheldon/Logger",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "main": "index.js",
   "readme": "README.md",
