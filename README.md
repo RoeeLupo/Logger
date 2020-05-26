@@ -1,4 +1,3 @@
-
 <h1 align="center" id="Template">
   Logger
 </h1>
@@ -20,7 +19,27 @@
 
 A minimalist, dependency-free, lightning fast logger made for https://discord.boats and my other NodeJS projects
 
-![#](https://cdn.discordapp.com/attachments/617783101128441878/714364487926546473/unknown.png)
+## Showcase
+
+![#](https://mrsheldon.me/files/70605228.png)
+
+## Usage
+
+```js
+const logger = require("../index")
+
+const Logger = new logger({options})
+
+Logger.warning("warning")
+Logger.error("erorr")
+Logger.success("success")
+Logger.info("info")
+```
+
+### Option
+| Name | Default Value                  | Required | Description                                |
+|------|--------------------------------|----------|--------------------------------------------|
+| file | __dirname + '/logs/debug.log'  | Yes      | Defines where the log file will be created |
 
 ## Contributing
 
