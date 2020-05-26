@@ -30,7 +30,7 @@ Use `npm i @mrsheldon/logger`
 ## Usage
 
 ```js
-const logger = require("../index")
+const logger = require("@mrsheldon/logger")
 
 const Logger = new logger({options})
 
@@ -45,7 +45,6 @@ Logger.info("info")
 |-----------|-------------------------------|----------|-------------------------------------------------------------|
 | file_save | false                         | No       | Decides if it will save the errors and warnings to the file |
 | file_dir  | __dirname + '/logs/debug.log' | No       | Decides where the log file will be created                  |
-
 
 ## Contributing
 

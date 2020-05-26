@@ -11,7 +11,7 @@ module.exports = class Logger {
         else this.file_save = false;
 
         if (this.options.hasOwnProperty('file_dir')) this.file = this.options.file_dir;
-        else this.file = __dirname + '/debug.log';
+        else this.file = '././debug.log';
 
         if (this.file_save) {
             this.log_file = fs.createWriteStream(this.file, {flags : 'a'});
