@@ -34,10 +34,13 @@ const logger = require("@mrsheldon/logger")
 
 const Logger = new logger({options})
 
+Logger.debug("debug")
 Logger.warning("warning")
 Logger.error("erorr")
+Logger.fetal("fetal")
 Logger.success("success")
 Logger.info("info")
+Logger.trace("trace")
 ```
 
 ### Options
@@ -62,6 +65,8 @@ Logger.info("info")
 | {minute}       | The minute (from the {time})    | 55                |
 | {second}       | The second (from the {time})    | 52                |
 
+### Notice
+Only warnings, errors and fetal errors are saved to the file, customization to be added soon
 
 ## Contributing
 

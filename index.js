@@ -27,7 +27,15 @@ module.exports = class Logger {
     info(...message) {
         return this._write('info', ...message);
     }
-    
+
+    trace(...message) {
+        return this._write('trace', ...message);
+    }
+
+    debug(...message) {
+        return this._write('debug', ...message);
+    } 
+
     warning(...message) {
         return this._write('warning', ...message);
     }
@@ -39,6 +47,10 @@ module.exports = class Logger {
     error(...message) {
         return this._write('error', ...message);
     }
+
+    fetal(...message) {
+        return this._write('fetal', ...message);
+    } 
 
     _write(type, ...message) {
         let date = new Date()
@@ -58,6 +70,14 @@ module.exports = class Logger {
                 save = false;
                 type_text = colours.BgInfo + 'Info' + colours.Reset;
                 break;
+            case 'trace':
+                save = false;
+                type_text = colours.BgInfo + 'Trace' + colours.Reset;
+                break;
+            case 'debug':
+                save = false;
+                type_text = colours.BgWarning + 'Debug' + colours.Reset;
+                break;
             case 'warning':
                 save = true;
                 type_text = colours.BgWarning + 'Warning' + colours.Reset;
@@ -70,8 +90,11 @@ module.exports = class Logger {
                 save = true;
                 type_text = colours.BgError + 'Error' + colours.Reset;
                 break;
-            default:
+            case 'fetal':
+                save = true;
+                type_text = colours.BgError + 'Fetal' + colours.Reset;
                 break;
+            default: break;
         }
         
         if(this.file_save) {
