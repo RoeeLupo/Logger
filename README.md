@@ -21,7 +21,7 @@ A minimalist, dependency-free, lightning fast logger made for https://discord.bo
 
 ## Showcase
 
-![#](https://i.ibb.co/qM9pPKS/image.png)
+![#](https://i.ibb.co/ckLwbYz/image.png)
 
 ## Installing
 
