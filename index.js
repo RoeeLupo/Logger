@@ -8,10 +8,10 @@ module.exports = class Logger {
         this.options = options || {}
 
         if (this.options.hasOwnProperty('format')) this.format = this.options.format;
-        else this.format = "[{date} | {time}] {type} : {message}";
+        else this.format = "[{date} - {time}] {type} : {message}";
 
         if (this.options.hasOwnProperty('file_format')) this.file_format = this.options.file_format + "\n";
-        else this.file_format = "[{date} | {time}] [{type}] : {message}\n";
+        else this.file_format = "[{date} - {time}] [{type}] : {message}\n";
 
         if (this.options.hasOwnProperty('file_save')) this.file_save = this.options.file_save;
         else this.file_save = false;
