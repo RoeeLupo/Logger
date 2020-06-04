@@ -7,6 +7,12 @@ module.exports = class Logger {
     constructor(options) {
         this.options = options || {}
 
+        if (this.options.hasOwnProperty('format')) this.format = this.options.format;
+        else this.format = "[{date} | {time}] {type} : {message}";
+
+        if (this.options.hasOwnProperty('file_format')) this.file_format = this.options.file_format + "\n";
+        else this.file_format = "[{date} | {time}] [{type}] : {message}\n";
+
         if (this.options.hasOwnProperty('file_save')) this.file_save = this.options.file_save;
         else this.file_save = false;
 
@@ -35,41 +41,65 @@ module.exports = class Logger {
     }
 
     _write(type, ...message) {
-        let d = new Date()
-        let day = escape(d.getDate());
-        let month = escape(d.getMonth());
-        let year = d.getFullYear();
-        let full_date = `[${month}/${day}/${year} | ${escape(d.getHours())}:${escape(d.getMinutes())}:${d.getSeconds()}]`
+        let date = new Date()
+        let day = escape(date.getDate());
+        let month = escape(date.getMonth() + 1)
+        let year = date.getFullYear();
+        let second = date.getSeconds()
+        let minute = escape(date.getMinutes())
+        let hour = escape(date.getHours())
+        let full_date = `${month}/${day}/${year}`
+        let full_time = `${hour}:${minute}:${second}`
         let type_text; 
         let save;
 
         switch(type) {
             case 'info':
                 save = false;
-                type_text = colours.BgInfo + '[Info]' + colours.Reset;
+                type_text = colours.BgInfo + 'Info' + colours.Reset;
                 break;
             case 'warning':
                 save = true;
-                type_text = colours.BgWarning + '[Warning]' + colours.Reset;
+                type_text = colours.BgWarning + 'Warning' + colours.Reset;
                 break;
             case 'success':
                 save = false;
-                type_text = colours.BgSuccess + '[Success]' + colours.Reset;
+                type_text = colours.BgSuccess + 'Success' + colours.Reset;
                 break;
             case 'error':
                 save = true;
-                type_text = colours.BgError + '[Error]' + colours.Reset;
+                type_text = colours.BgError + 'Error' + colours.Reset;
                 break;
             default:
                 break;
         }
         
         if(this.file_save) {
-            const final_file = `${full_date} [${type}] : ${message}\n`
+            const final_file = this.file_format
+            .replace("{date}", full_date)
+            .replace("{day}", day)
+            .replace("{month}", month)
+            .replace("{year}", year)
+            .replace("{time}", full_time)
+            .replace("{second}", second)
+            .replace("{minute}", minute)
+            .replace("{hour}", hour)
+            .replace("{type}", type)
+            .replace("{message}", message)
             save ? this.log_file.write(final_file) : null
         }
 
-        const final_console = `${full_date} ${type_text} : ${message}`
+        const final_console = this.format
+        .replace("{date}", full_date)
+        .replace("{day}", day)
+        .replace("{month}", month)
+        .replace("{year}", year)
+        .replace("{time}", full_time)
+        .replace("{second}", second)
+        .replace("{minute}", minute)
+        .replace("{hour}", hour)
+        .replace("{type}", type_text)
+        .replace("{message}", message)
         return console.log(final_console)
     }
 }

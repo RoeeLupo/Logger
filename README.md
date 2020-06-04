@@ -41,10 +41,27 @@ Logger.info("info")
 ```
 
 ### Option
-| Name      | Default Value                 | Required | Description                                                 |
-|-----------|-------------------------------|----------|-------------------------------------------------------------|
-| file_save | false                         | No       | Decides if it will save the errors and warnings to the file |
-| file_dir  | __dirname + '/logs/debug.log' | No       | Decides where the log file will be created                  |
+| Name         | Default Value                            | Required | Description                                                 |
+|--------------|------------------------------------------|----------|-------------------------------------------------------------|
+| file_save    | false                                    | No       | Decides if it will save the errors and warnings to the file |
+| file_dir     | __dirname + '/logs/debug.log'            | No       | Decides where the log file will be created                  |
+| file_format  | '[{date} | {time}] [{type}] : {message}' | No       | Sets the format of the file log                             |
+| format       | '[{date} | {time}] {type} : {message}'   | No       | Sets the format of the console log                          |
+
+
+### Available format arguments
+| Name           | Description                     | Example           |
+|----------------|---------------------------------|-------------------|
+| {message}      | The log message                 | Error in index.js |
+| {date}         | The full date                   | 06/04/2020        |
+| {time}         | The full time                   | 11:55:52          | 
+| {year}         | The full year (from the {date}) | 2020              |
+| {month}        | The month (from the {date})     | 06                |
+| {day}          | The day (from the {date})       | 04                |
+| {hour}         | The hour (from the {time})      | 11                |
+| {minute}       | The minute (from the {time})    | 55                |
+| {second}       | The second (from the {time})    | 52                |
+
 
 ## Contributing
 
