@@ -92,7 +92,7 @@ module.exports = class Logger {
                 break;
             case 'fatal':
                 save = true;
-                type_text = colours.BgError + 'fatal' + colours.Reset;
+                type_text = colours.BgError + 'Fatal' + colours.Reset;
                 break;
             default: break;
         }
