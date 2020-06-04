@@ -9,8 +9,8 @@ const Logger = new logger({
 
 Logger.debug("debug")
 Logger.warning("warning")
-Logger.error("erorr")
-Logger.fetal("fetal")
+Logger.error("error")
+Logger.fatal("fatal")
 Logger.success("success")
 Logger.info("info")
 Logger.trace("trace")

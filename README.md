@@ -36,8 +36,8 @@ const Logger = new logger({options})
 
 Logger.debug("debug")
 Logger.warning("warning")
-Logger.error("erorr")
-Logger.fetal("fetal")
+Logger.error("error")
+Logger.fatal("fatal")
 Logger.success("success")
 Logger.info("info")
 Logger.trace("trace")
@@ -66,7 +66,7 @@ Logger.trace("trace")
 | {second}       | The second (from the {time})    | 52                |
 
 ### Notice
-Only warnings, errors and fetal errors are saved to the file, customization to be added soon
+Only warnings, errors and fatal errors are saved to the file, customization to be added soon
 
 ## Contributing
 
