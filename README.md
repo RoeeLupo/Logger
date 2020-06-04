@@ -40,12 +40,12 @@ Logger.success("success")
 Logger.info("info")
 ```
 
-### Option
+### Options
 | Name         | Default Value                            | Required | Description                                                 |
 |--------------|------------------------------------------|----------|-------------------------------------------------------------|
 | file_save    | false                                    | No       | Decides if it will save the errors and warnings to the file |
 | file_dir     | __dirname + '/logs/debug.log'            | No       | Decides where the log file will be created                  |
-| file_dir     | '[{date} - {time}] {type} : {message}'   | No       | Decides where the log file will be created                  |
+| file_format  | '[{date} - {time}] [{type}] : {message}' | No       | Sets the format of the file log                             |
 | format       | '[{date} - {time}] {type} : {message}'   | No       | Sets the format of the console log                          |
 
 
