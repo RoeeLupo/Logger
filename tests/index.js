@@ -10,7 +10,7 @@ const Logger = new logger({
 Logger.debug("debug")
 Logger.warning("warning")
 Logger.error("error")
-Logger.fatal("fatal")
+Logger.critical("critical")
 Logger.success("success")
 Logger.info("info")
 Logger.trace("trace")

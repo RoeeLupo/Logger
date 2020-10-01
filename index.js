@@ -48,8 +48,8 @@ module.exports = class Logger {
         return this._write('error', ...message);
     }
 
-    fatal(...message) {
-        return this._write('fatal', ...message);
+    critical(...message) {
+        return this._write('critical', ...message);
     } 
 
     _write(type, ...message) {
@@ -73,6 +73,7 @@ module.exports = class Logger {
             case 'trace':
                 save = false;
                 type_text = colours.BgInfo + 'Trace' + colours.Reset;
+                message += ": " + new Error().stack;
                 break;
             case 'debug':
                 save = false;
@@ -90,9 +91,9 @@ module.exports = class Logger {
                 save = true;
                 type_text = colours.BgError + 'Error' + colours.Reset;
                 break;
-            case 'fatal':
+            case 'critical':
                 save = true;
-                type_text = colours.BgError + 'Fatal' + colours.Reset;
+                type_text = colours.BgError + 'Critical' + colours.Reset;
                 break;
             default: break;
         }
